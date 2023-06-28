@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Genre Finder</title>
+  <link href="../static/style.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+  <script src="../Static/Script.js"></script>
+  <div style="padding-top: 200px;">
+  <h1>Video Genre Finder</h1></div>
+  <div style="display: flex; justify-content: center; align-items: center; height: 35vh;">
+  <form  action="/predict" method="POST">
+    <div class="form-floating mb-3">
+      <input class="form-control" id="video-title" type="text" name="video-title" placeholder="Hello" >
+      <label for="video-title">Video Title</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" id="video-description" name = "video-description" placeholder="hello" >
+      <label for="video-description">Video Description</label>
+    </div>
+    <button type="submit" onclick="findGenre()">Find Genre</button>
+    <div  class="text-dark">
+      {% if y %}
+      <p><b>{{y}}</b></p>
+      {% endif %}
+    </div>
+  </form>
+  </div>
+
+ 
+</body>
+</html>
